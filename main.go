@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	port = ":80"
+	port = ":8080"
 )
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
