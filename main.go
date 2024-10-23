@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 var (
 	port = ":80"
@@ -12,5 +15,8 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/home", homeHandler)
-	http.ListenAndServe(port, nil)
+	err := http.ListenAndServe(port, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
